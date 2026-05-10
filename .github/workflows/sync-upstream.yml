@@ -1,0 +1,29 @@
+name: Sync upstream homebrew-core
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # Tous les jours à 6h du matin
+  workflow_dispatch:        # Ou à la main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync master avec upstream
+        run: |
+          git remote add upstream https://github.com/Homebrew/homebrew-core.git
+          git fetch upstream
+          git merge upstream/master --no-edit
+          git push origin master
+
+      - name: Merge master dans ventura-compat
+        run: |
+          git checkout ventura-compat
+          git merge master --no-edit || echo "CONFLICT: merge manuel nécessaire"
+          git push origin ventura-compat

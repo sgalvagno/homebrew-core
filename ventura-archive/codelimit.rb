@@ -1,0 +1,164 @@
+class Codelimit < Formula
+  include Language::Python::Virtualenv
+
+  desc "Your Refactoring Alarm"
+  homepage "https://github.com/getcodelimit/codelimit"
+  url "https://files.pythonhosted.org/packages/c9/c7/8d549c91354c38f1dd8529aa4dcab080a232473c848eb7416673aef7f690/codelimit-0.20.2.tar.gz"
+  sha256 "f1c2740644bfe2cda6b4daf677d0d23a7bd6128595dc2f08d72233ab67700727"
+  license "GPL-3.0-or-later"
+
+  bottle do
+    sha256 cellar: :any,                 arm64_tahoe:   "c99bc8c7dc3c68ec725209c9695263aa0e288d6539a1d69ab25f8459812016dd"
+    sha256 cellar: :any,                 arm64_sequoia: "de213d923cc3b8f6fd6de6e4c1de1523c79c8fd6e03c6435c45f5d770cc2d039"
+    sha256 cellar: :any,                 arm64_sonoma:  "80daefacb3a23275a833737a4a1efc4187a23a66e0506c7f48a1c368fe11d9b3"
+    sha256 cellar: :any,                 arm64_ventura: "27e1bcd2e921327ae8aacc0f1e63023858a5c2635b78f83bdbd0062a0dfed8a2"
+    sha256 cellar: :any,                 sonoma:        "a3a2050ad1cd5b9a0f35503d7b28774e9a54dd105b993db6a7168c303993d6a0"
+    sha256 cellar: :any,                 ventura:       "87d44767b28a57437d7c21f7445cbc78ec5eefdefe404277ec70fcb781625071"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fcb61d62d3e13f7e85e46a647b834f0fbab5dbeb2e08fa678cde6761560c41e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c38a254a22e7cb6c2ce22d1999b9e0e21066a142b3fa71ab6704d530b21a5e7"
+  end
+
+  depends_on "certifi" => :no_linkage
+  depends_on "libyaml"
+  depends_on "python@3.14"
+
+  resource "aiohappyeyeballs" do
+    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
+    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
+  end
+
+  resource "aiohttp" do
+    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
+    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+  end
+
+  resource "aiosignal" do
+    url "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz"
+    sha256 "f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7"
+  end
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+  end
+
+  resource "charset-normalizer" do
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+  end
+
+  resource "frozenlist" do
+    url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
+    sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
+  end
+
+  resource "idna" do
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+  end
+
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "multidict" do
+    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
+    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+  end
+
+  resource "propcache" do
+    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
+    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "pyperclip" do
+    url "https://files.pythonhosted.org/packages/e8/52/d87eba7cb129b81563019d1679026e7a112ef76855d6159d24754dbd2a51/pyperclip-1.11.0.tar.gz"
+    sha256 "244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6"
+  end
+
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+  end
+
+  resource "requests" do
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+  end
+
+  resource "sh" do
+    url "https://files.pythonhosted.org/packages/59/52/f43920223c93e31874677c681b8603d36a40d3d8502d3a37f80d3995d43e/sh-2.2.2.tar.gz"
+    sha256 "653227a7c41a284ec5302173fbc044ee817c7bad5e6e4d8d55741b9aeb9eb65b"
+  end
+
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/21/ca/950278884e2ca20547ff3eb109478c6baf6b8cf219318e6bc4f666fad8e8/typer-0.19.2.tar.gz"
+    sha256 "9ad824308ded0ad06cc716434705f691d4ee0bfd0fb081839d2e426860e7fdca"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+  end
+
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+  end
+
+  resource "yarl" do
+    url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
+    sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
+  end
+
+  def install
+    # Unpin python for 3.14
+    # Issue ref: https://github.com/getcodelimit/codelimit/issues/79
+    inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.14"', 'requires-python = ">=3.10"'
+
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
+    virtualenv_install_with_resources
+  end
+
+  test do
+    (testpath/"test.py").write <<~PYTHON
+      def foo():
+        print('Hello world!')
+    PYTHON
+
+    assert_includes shell_output("#{bin}/codelimit check #{testpath}/test.py"), "Refactoring not necessary"
+  end
+end
